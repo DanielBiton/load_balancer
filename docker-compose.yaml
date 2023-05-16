@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+
+  backend:
+    build: ./backend
+
+  backend2:
+    build: ./backend
+
+
+  backend3:
+    build: ./backend
+    
+
+  nginx:
+    build: ./nginx
+    depends_on:
+      - backend
+      - backend2
+      - backend3
+    ports:
+      - 9090:9090
